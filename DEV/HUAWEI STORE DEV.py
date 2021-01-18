@@ -4,15 +4,14 @@ import time
 from threading import Thread
 
 ACCOUNTS = {
-    "xyzliang1": "zl1424625705"
+    "华为账户账号/电话/邮箱": "账户密码"
 }
+
 chrome_driver = "/usr/local/bin/chromedriver"   # Mac示例
-personalDataPath= "/Users/zhangliang/Documents/GitHub/HUAWEI STORE GO/HUAWEI-STORE-GO/DEV/Default"   #Chrome的个人资料路径示例
+personalDataPath= "/Users/zhangliang/Downloads/BUY-HW-master/Default"   #Chrome的个人资料路径示例
 
 # 测试Nova 8
 BUY_URL = 'https://www.vmall.com/product/10086232069466.html'
-# 测试mate30se pro
-#BUY_URL = 'https://www.vmall.com/product/10086063422898.html'
 # 开始自动刷新等待抢购按钮出现的时间点,建议提前10-30s，并提前2-5分钟启动python脚本，确保登陆成功，进入页面。
 BEGIN_GO = '2021-01-18 10:07:50'
 #是否启动自动选手机参数。1为开启，0为关闭。当不启用时，无需填写下面的参数，此时抢购会默认网页上的默(第一个颜色、版本、套餐)。若不需要请关闭此选项能加快速度。
@@ -22,7 +21,7 @@ AUTO_COLOR=1
 #是否启动自动选手机版本
 AUTO_EDITION=1
 #是否启动自动选手机套餐
-AUTO_COMBO=0
+AUTO_COMBO=0}
 #颜色，仅当AUTO_SELECT=1和AUTO_COLOR=1时才需要写
 COLOR='8号色'
 #版本，仅当AUTO_SELECT=1和AUTO_EDITION=1时才需要写
@@ -65,9 +64,6 @@ def onQueue(driver, user):
     print(user + '开始排队：' + BEGIN_GO)
     while True:
         errorbutton = driver.find_element_by_id("boxCloseBtn")
-        #errorbutton = driver.find_element_by_link_text('返回活动')  # 出现这个一般是失败了。。
-        #if errorbutton.is_enabled():
-        #print(errorbutton.get_attribute('style'))
         if errorbutton.get_attribute('style') == 'display: none;':
             print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+user + "抢购失败，再试一次")
             goToBuy(driver, user)
