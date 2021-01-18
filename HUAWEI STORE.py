@@ -64,9 +64,6 @@ def onQueue(driver, user):
     print(user + '开始排队：' + BEGIN_GO)
     while True:
         errorbutton = driver.find_element_by_id("boxCloseBtn")
-        #errorbutton = driver.find_element_by_link_text('返回活动')  # 出现这个一般是失败了。。
-        #if errorbutton.is_enabled():
-        #print(errorbutton.get_attribute('style'))
         if errorbutton.get_attribute('style') == 'display: none;':
             print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+user + "抢购失败，再试一次")
             goToBuy(driver, user)
@@ -86,7 +83,13 @@ def select(driver):
             color.click()
             print(COLOR + '选择成功！')
         except:
-            print('颜色选择错误！请手动选择！')
+            time.sleep(1)
+            try:
+                color = driver.find_element_by_link_text(COLOR);
+                color.click()
+                print(COLOR + '选择成功！')
+            except:
+                print('颜色选择错误！请手动选择！')
     else:
         print('无需选择颜色')
 
@@ -96,7 +99,13 @@ def select(driver):
             edition.click()
             print(EDITION + '选择成功！')
         except:
-            print('版本选择错误！请手动选择！')
+            time.sleep(1)
+            try:
+                edition = driver.find_element_by_link_text(EDITION);
+                edition.click()
+                print(EDITION + '选择成功！')
+            except:
+                print('版本选择错误！请手动选择！')
     else:
         print('无需选择版本')
 
@@ -106,7 +115,13 @@ def select(driver):
             combo.click()
             print(COMBO + '选择成功！')
         except:
-            print('套餐选择错误！请手动选择！')
+            time.sleep(1)
+            try:
+                combo = driver.find_element_by_link_text(COMBO);
+                combo.click()
+                print(COMBO + '选择成功！')
+            except:
+                print('套餐选择错误！请手动选择！')
     else:
         print('无需选择套餐')
 

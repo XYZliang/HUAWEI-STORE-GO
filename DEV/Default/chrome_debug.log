@@ -1,0 +1,43 @@
+[97354:13059:0118/174843.266432:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174843.267324:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174843.267806:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174843.301346:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174848.269479:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174848.269634:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174848.269704:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174848.303086:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97458:85763:0118/174849.952924:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 104 to 127
+[97458:85763:0118/174849.952997:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 106 to 125
+[97458:85763:0118/174849.953019:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 110 to 124
+[97458:85763:0118/174849.953039:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 112 to 123
+[97458:85763:0118/174849.953065:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 102 to 122
+[97458:85763:0118/174849.953101:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 103 to 121
+[97458:85763:0118/174849.953126:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 105 to 120
+[97458:85763:0118/174849.953174:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 111 to 119
+[97458:85763:0118/174849.953201:WARNING:used_ids.h(55)] Duplicate id found. Reassigning from 109 to 118
+[97458:775:0118/174850.183319:ERROR:webrtc_sdp.cc(396)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[97458:775:0118/174850.183524:ERROR:webrtc_sdp.cc(396)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[97458:775:0118/174850.183747:ERROR:webrtc_sdp.cc(396)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[97458:775:0118/174850.183830:ERROR:webrtc_sdp.cc(396)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[97458:775:0118/174850.184085:ERROR:rtc_peer_connection_handler.cc(2575)] Failed to create native session description. Type: "offer" SDP: "v=0\r\no=- 268860661641661090 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 UDP/TLS/RTP/SAVPF 118\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:Jf7r\r\na=ice-pwd:BuTrJEEZ4TS2zmoHdR/v6iIR\r\na=ice-options:trickle\r\na=fingerprint:sha-256 5D:6D:8A:D8:61:BA:BE:BD:89:E8:BC:6C:AA:FB:5A:52:A2:0A:A9:FA:B0:A4:F5:EB:34:61:5B:E5:E3:5D:AB:C2\r\na=setup:actpass\r\na=mid:0\r\na=sendrecv\r\na=msid: \r\na=rtcp-mux\r\na=rtpmap:118 google-data/90000\r\na=ssrc:2103644702 cname:sw04hd9119MbZJ/w\r\na=ssrc:2103644702 msid:- \r\na=ssrc:2103644702 mslabel:-\r\na=ssrc:2103644702 label:\r\n"
+[97458:775:0118/174850.184207:ERROR:rtc_peer_connection_handler.cc(1367)] "Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute."
+[97329:775:0118/174850.185965:INFO:CONSOLE(0)] "[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o", source: https://id1.cloud.huawei.com/CAS/portal/login.html?validated=true&themeName=red&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3Dhttps%253A%252F%252Fwww.vmall.com%252F&loginChannel=26000000&reqClientType=26&lang=zh-cn (0)
+[97354:13059:0118/174854.094755:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97542:775:0118/174858.243600:ERROR:ppapi_thread.cc(309)] Failed to load Pepper module from internal-not-yet-present (error: dlopen(internal-not-yet-present, 1): image not found)
+[97354:13059:0118/174859.095641:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174900.376608:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174900.376901:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174900.435094:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174905.380850:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174905.381228:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174905.437869:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174906.984794:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174911.985886:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174925.353343:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174930.359358:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/174957.252140:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/175002.201403:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/175112.912287:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/175117.913371:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/175519.721571:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
+[97354:13059:0118/175524.723611:ERROR:ssl_client_socket_impl.cc(960)] handshake failed; returned -1, SSL error code 1, net_error -101
