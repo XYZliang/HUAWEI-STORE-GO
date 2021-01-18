@@ -47,8 +47,12 @@
 
 - 对于前两种，如何找到当前这个Chrome的配置路径？直接在地址栏输入chrome://version/就可以看到个人资料路径。
 
-- 建议到Chrome
+- 建议到Chrome设置里把首页改为脚本中的LOGIN_URL（https://hwid1.vmall.com/CAS/portal/login.html?validated=一坨一坨reqClientType=26&lang=zh-cn）
 
+  ![](DEV/configuration.png)
+  
+  否则使用自己的个人资料路径会出现在登陆界面卡十多秒的情况。目前原因不详。
+  
   
 
 ## 备注
