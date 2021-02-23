@@ -3,66 +3,69 @@
 #   本python脚本仅供大家学习交流，严禁严禁用于商业用途，不得利用本项目进行任何形式的盈利活动，请在24小时内删除。
 #   如果本项目对你有所帮助，麻烦项目给个星星鼓励一下哦
 
-from selenium import webdriver
-import time
-from threading import Thread
-
+################################################################用户配置################################################################
+# 账号密码
 ACCOUNTS = {
     "华为账户账号/电话/邮箱": "账户密码"
 }
 
+# chrome driver路径
 chrome_driver = "/usr/local/bin/chromedriver"   # Mac示例
-#chrome_driver = "C:\Google\ChromeApplication\chrome.exe"   # Windows示例
+# chrome_driver = "C:\Google\ChromeApplication\chromedriver.exe"   # Windows示例
 
-# 测试Nova 8
-BUY_URL = 'https://www.vmall.com/product/10086232069466.html'
+# 手机链接
+BUY_URL = 'https://www.vmall.com/product/10086063422898.html'
 # 开始自动刷新等待抢购按钮出现的时间点,建议提前10-30s，并提前2-5分钟启动python脚本，确保登陆成功，进入页面。
-BEGIN_GO = '2021-01-21 10:07:50'
-#是否启动自动选手机参数。1为开启，0为关闭。当不启用时，无需填写下面的参数，此时抢购会默认网页上的默(第一个颜色、版本、套餐)。若不需要请关闭此选项能加快速度。
-AUTO_SELECT=1
-#是否启动自动选手机颜色
-AUTO_COLOR=1
-#是否启动自动选手机版本
-AUTO_EDITION=1
-#是否启动自动选手机套餐
-AUTO_COMBO=1
-#颜色，仅当AUTO_SELECT=1和AUTO_COLOR=1时才需要写
-COLOR='8号色'
-#版本，仅当AUTO_SELECT=1和AUTO_EDITION=1时才需要写
-EDITION='5G全网通 8GB+256GB'
-#套餐，仅当AUTO_SELECT=1和AUTO_COMBO=1时才需要写
-COMBO='官方标配'
-
-# 登录url,一般无需改动
-LOGIN_URL = 'https://hwid1.vmall.com/CAS/portal/login.html?validated=true&themeName=red&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3Dhttps%253A%252F%252Fwww.vmall.com%252F&loginChannel=26000000&reqClientType=26&lang=zh-cn'
-# 登录成功手动确认URL,一般无需改动
-LOGIN_SUCCESS_CONFIRM = 'https://www.vmall.com/'
+BEGIN_GO = '2021-02-23 10:07:50'
+# 是否启动自动选手机参数。1为开启，0为关闭。当不启用时，无需填写下面的参数，此时抢购会默认网页上的默(第一个颜色、版本、套餐)。若不需要请关闭此选项能加快速度。
+AUTO_SELECT = 1
+# 是否启动自动选手机颜色
+AUTO_COLOR = 1
+# 是否启动自动选手机版本
+AUTO_EDITION = 1
+# 是否启动自动选手机套餐
+AUTO_COMBO = 1
+# 颜色，仅当AUTO_SELECT=1和AUTO_COLOR=1时才需要写
+COLOR = '翡冷翠'
+# 版本，仅当AUTO_SELECT=1和AUTO_EDITION=1时才需要写
+EDITION = '5G全网通 8GB+256GB'
+# 套餐，仅当AUTO_SELECT=1和AUTO_COMBO=1时才需要写
+COMBO = '官方标配'
 # 登陆信任 0表示不信任，1表示信任。一般无需改动。若信任，当您下次登录时，系统将不会要求您提供验证码。对于HUAWEI STORE普通版脚本，每次运行脚本即创建一个新Chrome，信任意义不大，默认为0，建议设置为0
 TRUST = 0
 
+################################################################程序开始################################################################
+from selenium.webdriver.common.action_chains import ActionChains
+import selenium
+from threading import Thread
+import time
+from selenium import webdriver
+# 登录url,一般无需改动
+LOGIN_URL = 'https://hwid1.vmall.com/CAS/portal/login.html?validated=true&themeName=red&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3Dhttps%253A%252F%252Fwww.vmall.com%252F&loginChannel=26000000&reqClientType=26&lang=zh-cn'
 # 进到购买页面后提交订单
 
 
 def submitOrder(driver, user):
     time.sleep(1)
-    while BUY_URL == driver.current_url:
+    if BUY_URL == driver.current_url:
         print(user + ':当前页面还在商品详情！！！')
         time.sleep(3)
-
+        goToBuy(driver, user)
+    else:
+        order_url = driver.current_url
     while True:
         try:
             submitOrder = driver.find_element_by_link_text('提交订单')
             submitOrder.click()
             print(user + ':成功提交订单')
+            time.sleep(1)
             break
         except:
-            print(user + ':提交不了订单！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！')
+            print(user + ':提交不了订单！！！！！！！！！！！！！！！！！！！！！快去自己提交！！')
             time.sleep(1)  # 到了订单提交页面提交不了订单一直等待
             pass
-    while True:
-        print(user + ':进入睡眠3000s')
-        time.sleep(3000)
-        pass
+    print(user + "请自行查看提交结果！！程序60s后退出")
+    exit(60)
 
 
 # 排队中
@@ -177,25 +180,42 @@ def goToBuy(driver, user):
             if text == '已售完':
                 over = True
                 break
-            if text == '立即申购':
+            elif text == '立即申购':
                 buyButton = driver.find_element_by_link_text('立即申购')
-                if buyButton.get_attribute('class') != 'product-button02 disabled':
-                    print(time.strftime("%Y-%m-%d %H:%M:%S",
-                                        time.localtime()) + user + '可以开始申购，立即申购')
-                    buyButton.click()
-                    break
-                else:
-                    try:
-                        textnext = driver.find_elements_by_xpath(
-                            '//div[@id="pro-operation-countdown"]/p')[0].text
-                        if isRemind != 2:
-                            print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +
-                                  user + '准备开始下一轮' + textnext.replace('开售:', '') + '的抢购')
-                    except:
-                        if isRemind != 2:
-                            print(time.strftime("%Y-%m-%d %H:%M:%S",
-                                                time.localtime()) + user + '准备开始下一轮的抢购')
-                            isRemind != 2
+                isRemindd = 0
+                try:
+                    if buyButton.get_attribute('class') != 'product-button02 disabled':
+                        print(time.strftime("%Y-%m-%d %H:%M:%S",
+                                            time.localtime()) + user + '可以开始申购，立即申购')
+                        buyButton.click()
+                        break
+                    else:
+                        try:
+                            textnext = driver.find_elements_by_xpath(
+                                '//div[@id="pro-operation-countdown"]/p')[0].text
+                            if isRemind != 2 and isRemindd != 0:
+                                print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +
+                                      user + '准备开始下一轮' + textnext.replace('开售:', '') + '的抢购')
+                                isRemindd = 1
+                        except:
+                            if isRemind != 2 and isRemindd != 0:
+                                print(time.strftime("%Y-%m-%d %H:%M:%S",
+                                                    time.localtime()) + user + '准备开始下一轮的抢购')
+                                isRemindd = 1
+                except:
+                    buyButton = driver.find_element_by_link_text('立即申购')
+            elif text == '0元预约':
+                buyButton = driver.find_element_by_link_text('0元预约')
+                print(time.strftime("%Y-%m-%d %H:%M:%S",
+                                    time.localtime()) + user + ':请手动进行预约。程序将在一分钟后退出')
+                buyButton.click()
+                exit(60)
+            elif text == '参与预约':
+                buyButton = driver.find_element_by_link_text('参与预约')
+                print(time.strftime("%Y-%m-%d %H:%M:%S",
+                                    time.localtime()) + user + ':请手动进行预约。程序将在一分钟后退出')
+                buyButton.click()
+                exit(60)
             else:
                 over = True
                 break
@@ -288,6 +308,8 @@ def loginMall(user, pwd):
         password.send_keys(pwd)
         denglu = driver.find_element_by_xpath(
             '//div[@ht="click_pwdlogin_submitLogin"]')
+        ActionChains(driver).move_to_element(denglu).perform()
+        time.sleep(1)
         denglu.click()
         print(user + '成功输入了账号密码，尝试登陆.')
     except:
@@ -296,9 +318,10 @@ def loginMall(user, pwd):
     islogin = 0
     while True:
         time.sleep(0.5)
-        if LOGIN_SUCCESS_CONFIRM == driver.current_url:  # 页面跳转登陆成功
+        if LOGIN_URL != driver.current_url:  # 页面跳转登陆成功
             print(time.strftime("%Y-%m-%d %H:%M:%S",
                                 time.localtime()) + user + '登录成功！！')
+            goToBuy(driver, user)
             break
         else:  # 没有登陆成功
             if isRemind == 0:
@@ -311,7 +334,12 @@ def loginMall(user, pwd):
                     sendcode(driver, user)
                     islogin = 1
             except:
-                time.sleep(0.05)
+                try:
+                    denglu = driver.find_element_by_link_text('登陆')
+                    denglu.click()
+                    print(denglu)
+                except:
+                    time.sleep(0.05)
             if islogin == 1:
                 try:  # 判断是否在信任浏览器界面
                     isGetVerification = driver.find_element_by_xpath(
@@ -322,6 +350,7 @@ def loginMall(user, pwd):
                 except:
                     time.sleep(0.05)
             if islogin == 0 or islogin == 1:
+                error = ""
                 try:
                     error = driver.find_element_by_xpath(
                         '//div[@class="marginTB8 hwid-input-msg-error"]').text
@@ -338,7 +367,6 @@ def loginMall(user, pwd):
                     print('60s后程序退出')
                     time.sleep(60)
                     exit()
-    goToBuy(driver, user)
 
 
 if __name__ == "__main__":

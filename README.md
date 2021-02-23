@@ -1,7 +1,7 @@
 # HUAWEI STORE GO 2021
 
 ## 说明
-基于Python3+Selenium的华为商城抢购爬虫脚本，修改自近两年没更新的项目[BUY-HW](https://github.com/wfdubowen/BUY-HW)，为女神抢Nova 8（什么时候华为开始学小米玩饥饿营销了？）
+基于Python3+Selenium的华为商城抢购爬虫脚本，修改自近两年没更新的项目[BUY-HW](https://github.com/wfdubowen/BUY-HW)，为女神抢某华为手机（什么时候华为开始学小米玩饥饿营销了？）
 
 原项目的登陆以及抢购部分已经不可用，本项目对原项目进行了改正以适应新华为商城，并增加一些功能。
 
@@ -46,7 +46,7 @@ windows10 + Python3.6 + Chrome  87.0.4280.141 + Chrome Driver  87.0.4280.88实�
 
   Ps:不可使用同一账号
 
-- 配置chrome_driver属性，为计算机上下载的Chrome Driver路径。对于Windows，一般在Chrome安装目录下（C:\Google\ChromeApplication\chrome.exe）或者Python安装路径下（如原作者文章）。
+- 配置chrome_driver属性，为计算机上下载的Chrome Driver路径。对于Windows，取决于你的chromedriver.exe你放在哪（比如C:\Google\ChromeApplication\chromedriver.exe）或者Python安装路径下（如原作者文章）。
 
 - 配置BUY_URL，为你要抢购的商品的华为商城链接。比如华为Nova8 [https://www.vmall.com/product/10086232069466.html](https://www.vmall.com/product/10086232069466.html)最好剥离后面乱七八糟的参数，**只留下形如 https://www.vmall.com/product/这里是一坨数字.html 的形式**
 
@@ -123,6 +123,24 @@ windows10 + Python3.6 + Chrome  87.0.4280.141 + Chrome Driver  87.0.4280.88实�
 优化逻辑
 
 增加对验证码发送频繁状态的检测以及处理
+
+### V3.1 2020.2.23
+
+#### 根据大家提交的issues，尝试修复了一下问题
+
+[修改部分描述](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/1#issuecomment-784008134)
+
+[修改登录成功的逻辑判断](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/1#issuecomment-774577550)
+
+[优化某个可能导致程序出错的问题](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/3#issuecomment-784001794)
+
+#### 除此之外
+
+加入了对手机预约的部分支持
+
+优化了部分逻辑
+
+优化某个可能导致无法自动登录的问题
 
 
 
