@@ -1,3 +1,5 @@
+# **<font color=#FD5365>最新版目前存在一些问题无法使用，请大家先暂时使用[上一个版本](https://github.com/XYZliang/HUAWEI-STORE-GO/tree/0233dc3de7169a53d8f1b19b2cecc5aed4a40830)，刚回学校事情比较多，会尽快修复</font>   **
+
 # HUAWEI STORE GO 2021
 
 ## 说明
@@ -124,23 +126,25 @@ windows10 + Python3.6 + Chrome  87.0.4280.141 + Chrome Driver  87.0.4280.88实�
 
 增加对验证码发送频繁状态的检测以及处理
 
-### V3.1 2020.2.23
+### ~~V3.1 2020.2.23~~
 
-#### 根据大家提交的issues，尝试修复了一下问题
+#### ~~根据大家提交的issues，尝试修复了一下问题~~
 
-[修改部分描述](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/1#issuecomment-784008134)
+~~[修改部分描述](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/1#issuecomment-784008134)~~
 
-[修改登录成功的逻辑判断](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/1#issuecomment-774577550)
+~~[修改登录成功的逻辑判断](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/1#issuecomment-774577550)~~
 
-[优化某个可能导致程序出错的问题](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/3#issuecomment-784001794)
+~~[优化某个可能导致程序出错的问题](https://github.com/XYZliang/HUAWEI-STORE-GO/issues/3#issuecomment-784001794)~~
 
-#### 除此之外
+#### ~~除此之外~~
 
-加入了对手机预约的部分支持
+~~加入了对手机预约的部分支持~~
 
-优化了部分逻辑
+~~优化了部分逻辑~~
 
-优化某个可能导致无法自动登录的问题
+~~优化某个可能导致无法自动登录的问题~~
+
+**<font color=#FD5365>最新3.1版本目前存在一些问题无法使用，请大家先暂时使用[上一个版本](https://github.com/XYZliang/HUAWEI-STORE-GO/tree/0233dc3de7169a53d8f1b19b2cecc5aed4a40830)，刚回学校事情比较多，会尽快修复</font>   **
 
 
 
