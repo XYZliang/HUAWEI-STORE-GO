@@ -13,7 +13,7 @@ ACCOUNTS = {
 chrome_driver = "/usr/local/bin/chromedriver"   # Mac示例
 # chrome_driver = "C:\Google\ChromeApplication\chromedriver.exe"   # Windows示例
 
-personalDataPath= "/Users/zhangliang/Downloads/BUY-HW-master/Default"   #Chrome的个人资料路径
+personalDataPath = "/Users/zhangliang/Downloads/BUY-HW-master/Default"  # Chrome的个人资料路径
 
 # 手机链接
 BUY_URL = 'https://www.vmall.com/product/10086232069466.html'
@@ -299,10 +299,10 @@ def sendcode(driver, user):
 
 def loginMall(user, pwd):
     option = webdriver.ChromeOptions()
-    argument='--user-data-dir='+ personalDataPath
+    argument = '--user-data-dir=' + personalDataPath
     option.add_argument(argument)
     print('配置成功')
-    driver = webdriver.Chrome(executable_path=chrome_driver,options=option)
+    driver = webdriver.Chrome(executable_path=chrome_driver, options=option)
     print('webDriver打开成功')
     driver.get(LOGIN_URL)
     print('打开登陆页面')
@@ -326,7 +326,7 @@ def loginMall(user, pwd):
     islogin = 0
     while True:
         time.sleep(0.5)
-        if LOGIN_URL != driver.current_url:  # 页面跳转登陆成功
+        if "登录" not in driver.title:  # 页面跳转登陆成功
             print(time.strftime("%Y-%m-%d %H:%M:%S",
                                 time.localtime()) + user + '登录成功！！')
             goToBuy(driver, user)

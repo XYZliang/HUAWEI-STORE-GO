@@ -14,7 +14,7 @@ chrome_driver = "/usr/local/bin/chromedriver"   # Mac示例
 # chrome_driver = "C:\Google\ChromeApplication\chromedriver.exe"   # Windows示例
 
 # 手机链接
-BUY_URL = 'https://www.vmall.com/product/10086063422898.html'
+BUY_URL = 'https://www.vmall.com/product/10086232069466.html'
 # 开始自动刷新等待抢购按钮出现的时间点,建议提前10-30s，并提前2-5分钟启动python脚本，确保登陆成功，进入页面。
 BEGIN_GO = '2021-02-23 10:07:50'
 # 是否启动自动选手机参数。1为开启，0为关闭。当不启用时，无需填写下面的参数，此时抢购会默认网页上的默(第一个颜色、版本、套餐)。若不需要请关闭此选项能加快速度。
@@ -318,7 +318,7 @@ def loginMall(user, pwd):
     islogin = 0
     while True:
         time.sleep(0.5)
-        if LOGIN_URL != driver.current_url:  # 页面跳转登陆成功
+        if "登录" not in driver.title:  # 页面跳转登陆成功
             print(time.strftime("%Y-%m-%d %H:%M:%S",
                                 time.localtime()) + user + '登录成功！！')
             goToBuy(driver, user)
